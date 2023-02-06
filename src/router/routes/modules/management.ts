@@ -4,10 +4,10 @@ import { LAYOUT } from '/@/router/constant'
 import { t } from '/@/hooks/web/useI18n'
 
 const system: AppRouteModule = {
-  path: '/system',
-  name: 'System',
+  path: '/management',
+  name: 'Management',
   component: LAYOUT,
-  redirect: '/system/account',
+  redirect: '/management/user',
   meta: {
     orderNo: 2000,
     icon: 'ion:settings-outline',
@@ -15,13 +15,13 @@ const system: AppRouteModule = {
   },
   children: [
     {
-      path: 'account',
-      name: 'AccountManagement',
+      path: 'user',
+      name: 'UserManagement',
       meta: {
         title: t('routes.demo.system.account'),
         ignoreKeepAlive: false,
       },
-      component: () => import('/@/views/pages/system/user/Index.vue'),
+      component: () => import('/@/views/management/user/Index.vue'),
     },
   ],
 }
